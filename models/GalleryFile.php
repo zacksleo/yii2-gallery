@@ -54,7 +54,7 @@ class GalleryFile extends \yii\db\ActiveRecord
      */
     public function getPath()
     {
-        return FileHelper::normalizePath(Yii::getAlias(Yii::$app->getModule('gallery')->basePath . DIRECTORY_SEPARATOR
+        return FileHelper::normalizePath(Yii::getAlias(Yii::$app->getModule('gallery')->sourcePath . DIRECTORY_SEPARATOR
             . $this->file));
     }
 }
