@@ -41,8 +41,7 @@ class m150407_084217_gallery extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_gallery_galleryId', '{{%gallery_file}}', 'gallery_id');
-        $this->addForeignKey('fk_gallery_file_galleryId', '{{%gallery_file}}', 'gallery_id', '{{%gallery}}',
-            'id','CASCADE','RESTRICT');
+
     }
 
     public function down()

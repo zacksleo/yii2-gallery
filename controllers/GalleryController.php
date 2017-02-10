@@ -80,7 +80,7 @@ class GalleryController extends \yii\web\Controller
 
             $model = new GalleryFile();
             $model->gallery_id = $_POST['gallery_id'];
-            $model->file = $name;
+            $model->file = $model->gallery_id . DIRECTORY_SEPARATOR . $name;
 
             if ($model->save()) {
                 $response = [
@@ -163,7 +163,8 @@ class GalleryController extends \yii\web\Controller
 
         $ext = end($explodeName);
 
-        return Yii::$app->security->generateRandomString(16) . ".{$ext}";
+        return uniqid() . '.' . $ext;
+
     }
 
     /**

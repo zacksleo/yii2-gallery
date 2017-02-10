@@ -45,7 +45,7 @@ class GalleryFile extends \yii\db\ActiveRecord
     {
         $path = DIRECTORY_SEPARATOR . preg_replace('/^@(\w+)\//i', '', Yii::$app->getModule('gallery')->basePath);
 
-        return FileHelper::normalizePath($path . DIRECTORY_SEPARATOR . $this->gallery_id . DIRECTORY_SEPARATOR . $this->file, DIRECTORY_SEPARATOR);
+        return FileHelper::normalizePath($path . DIRECTORY_SEPARATOR . $this->file, DIRECTORY_SEPARATOR);
     }
 
     /**
@@ -55,6 +55,6 @@ class GalleryFile extends \yii\db\ActiveRecord
     public function getPath()
     {
         return FileHelper::normalizePath(Yii::getAlias(Yii::$app->getModule('gallery')->basePath . DIRECTORY_SEPARATOR
-            . $this->gallery_id . DIRECTORY_SEPARATOR . $this->file));
+            . $this->file));
     }
 }

@@ -5,6 +5,7 @@ namespace zacksleo\yii2\gallery\behaviors;
 
 use mongosoft\file\UploadImageBehavior as UploadBehavior;
 use yii\web\UploadedFile;
+use zacksleo\yii2\gallery\models\GalleryFile;
 
 class UploadImageBehavior extends UploadBehavior
 {
@@ -19,7 +20,7 @@ class UploadImageBehavior extends UploadBehavior
 
     public function beforeSave()
     {
-        /** @var BaseActiveRecord $model */
+        /** @var \yii\db\BaseActiveRecord $model */
         $model = $this->owner;
         if (in_array($model->scenario, $this->scenarios)) {
             if ($this->_file instanceof UploadedFile) {
@@ -30,7 +31,6 @@ class UploadImageBehavior extends UploadBehavior
                 }
                 $model->setAttribute($this->attribute, $this->galleryId . '/' . $this->_file->name);
             } else {
-                // Protect attribute
                 unset($model->{$this->attribute});
             }
         } else {
@@ -40,5 +40,30 @@ class UploadImageBehavior extends UploadBehavior
                 }
             }
         }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function delete($attribute, $old = false)
+    {
+        parent::delete($attribute, $old);
+        /** @var \yii\db\BaseActiveRecord $model */
+        $model = $this->owner;
+        $fileName = ($old === true) ? $model->getOldAttribute($attribute) : $model->$attribute;
+        GalleryFile::deleteAll([
+            'gallery_id' => $this->galleryId,
+            'file' => $fileName
+        ]);
+    }
+
+    protected function afterUpload()
+    {
+        $model = new GalleryFile();
+        $model->gallery_id = $this->galleryId;
+        $model->file = $this->owner->{$this->attribute};
+        $model->caption = $this->owner->name;
+        $model->save();
+        parent::afterUpload();
     }
 }
