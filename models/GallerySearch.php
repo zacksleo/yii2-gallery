@@ -45,7 +45,7 @@ class GallerySearch extends Gallery
             'query' => $query,
             'sort'=> [
                 'defaultOrder' => [
-                    'created' => SORT_DESC
+                    'created_at' => SORT_DESC
                 ],
             ]
         ]);

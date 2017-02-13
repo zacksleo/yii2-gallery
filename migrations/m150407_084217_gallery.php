@@ -23,8 +23,8 @@ class m150407_084217_gallery extends Migration
             'id' => Schema::TYPE_PK,
             'name' => Schema::TYPE_STRING . '(50) NOT NULL',
             'status' => Schema::TYPE_SMALLINT . '(1) NOT NULL DEFAULT 0',
-            'created' => Schema::TYPE_DATETIME . ' NOT NULL',
-            'updated' => Schema::TYPE_DATETIME . ' NOT NULL',
+            'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
+            'updated_at' => Schema::TYPE_DATETIME . ' NOT NULL',
         ], $tableOptions);
 
         $this->createIndex('idx_gallery_id_status', '{{%gallery}}', 'id, status');

@@ -45,8 +45,8 @@ $this->params['breadcrumbs'] = [
             'id',
             'name',
             'status:boolean',
-            'created',
-            'updated',
+            'created_at:time',
+            'updated_at:time',
         ],
     ]); ?>
 </div>

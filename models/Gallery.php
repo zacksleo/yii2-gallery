@@ -15,8 +15,8 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $id
  * @property string $name
  * @property integer $status
- * @property string $created
- * @property string $updated
+ * @property string $created_at
+ * @property string $updated_at
  *
  * @property GalleryFile[] $files
  */
@@ -38,9 +38,6 @@ class Gallery extends \yii\db\ActiveRecord
         return [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
-                'createdAtAttribute' => 'created',
-                'updatedAtAttribute' => 'updated',
-                'value' => new Expression('NOW()'),
             ]
         ];
     }
@@ -53,7 +50,7 @@ class Gallery extends \yii\db\ActiveRecord
         return [
             ['name', 'required'],
             ['status', 'integer'],
-            [['created', 'updated'], 'safe'],
+            [['created_at', 'updated_at'], 'safe'],
             ['name', 'string', 'max' => 50],
         ];
     }
@@ -67,15 +64,15 @@ class Gallery extends \yii\db\ActiveRecord
             'id' => Module::t('default', 'ID'),
             'name' => Module::t('default', 'NAME'),
             'status' => Module::t('default', 'STATUS'),
-            'created' => Module::t('default', 'CREATED'),
-            'updated' => Module::t('default', 'UPDATED'),
+            'created_at' => Module::t('default', 'CREATED'),
+            'updated_at' => Module::t('default', 'UPDATED'),
         ];
     }
 
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-           $this->updatePositions();
+            $this->updatePositions();
 
             return true;
         } else {
@@ -100,7 +97,7 @@ class Gallery extends \yii\db\ActiveRecord
 
     public function afterDelete()
     {
-       $this->removeModelDirectory();
+        $this->removeModelDirectory();
     }
 
     /**
@@ -121,8 +118,8 @@ class Gallery extends \yii\db\ActiveRecord
         $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
         $files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
 
-        foreach($files as $file) {
-            if ($file->isDir()){
+        foreach ($files as $file) {
+            if ($file->isDir()) {
                 rmdir($file->getRealPath());
             } else {
                 unlink($file->getRealPath());
