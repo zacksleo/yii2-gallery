@@ -19,7 +19,7 @@ class Module extends \yii\base\Module
      * @var string
      */
     public $sourcePath = '@frontend/web/galleries';
-    public $basePath = '@wwwroot/galleries';
+    public $basePath = '@webroot/galleries';
 
     /**
      * @var int
