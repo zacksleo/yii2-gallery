@@ -1,0 +1,28 @@
+{
+  "name": "zacksleo/yii2-gallery",
+  "description": "Yii2 gallery module",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "gallery",
+    "module"
+  ],
+  "authors": [
+    {
+      "name": "zacksleo",
+      "email": "zacksleo@gmail.com",
+      "homepage": "https://github.com/zacksleo"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "kartik-v/yii2-widgets": "*",
+    "kartik-v/yii2-grid": "*",
+    "sadovojav/yii2-inline-widgets-behavior": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "zacksleo\\yii2\\gallery\\": ""
+    }
+  }
+}
