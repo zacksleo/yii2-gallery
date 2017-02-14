@@ -14,7 +14,7 @@ return [
     'ID' => 'ID',
     'NAME' => '名称',
     'STATUS' => '状态',
-    'CAPTION' => '标题...',
+    'CAPTION' => '标题',
     'ORIGINAL' => '原始的',
     'UPDATE_CAPTION' => '更新标题',
     'REMOVE_IMAGE' => '删除图片',
