@@ -3,11 +3,11 @@
 use yii\helpers\Html;
 use zacksleo\yii2\gallery\Module;
 
-$this->title = Module::t('default', 'UPDATE') . ' ' . Html::encode($model->name);
+$this->title = Module::t('default', 'Update') . ' ' . Html::encode($model->name);
 $this->params['breadcrumbs'] = [
-    ['label' => Module::t('default', 'GALLERIES'), 'url' => ['index']],
+    ['label' => Module::t('default', 'Galleries'), 'url' => ['index']],
     ['label' => Html::encode($model->name), 'url' => ['view', 'id' => $model->id]],
-    Module::t('default', 'UPDATE')
+    Module::t('default', 'Update')
 ];
 
 ?>
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'] = [
 
             <div class="col-md-3">
                 <div class="pull-right">
-                    <?= Html::a(Module::t('default', 'VIEW'), [
+                    <?= Html::a(Module::t('default', 'View'), [
                         'view', 'id' => $model->id
                     ], [
                         'class' => 'btn btn-warning btn-sm'

@@ -14,17 +14,17 @@ use zacksleo\yii2\gallery\Module;
         <div class="bottom">
             <?= Html::textInput('caption', $model->caption, [
                 'class' => 'form-control',
-                'placeholder' => Module::t('default', 'CAPTION')
+                'placeholder' => Module::t('default', 'Caption')
             ]); ?>
 
             <div class="actions">
                 <a href="<?= $model->src; ?>" rel="<?= $model->galleryId; ?>" class="fancy" title="<?= $model->caption; ?>">
-                    <i class="watch glyphicon glyphicon-eye-open" title="<?= Module::t('default', 'ORIGINAL'); ?>"></i>
+                    <i class="watch glyphicon glyphicon-eye-open" title="<?= Module::t('default', 'Original'); ?>"></i>
                 </a>
 
-                <i class="edit glyphicon glyphicon-pencil" title="<?= Module::t('default', 'UPDATE_CAPTION'); ?>"></i>
+                <i class="edit glyphicon glyphicon-pencil" title="<?= Module::t('default', 'Update caption'); ?>"></i>
 
-                <i class="remove glyphicon glyphicon-trash" title="<?= Module::t('default', 'REMOVE_IMAGE'); ?>"></i>
+                <i class="remove glyphicon glyphicon-trash" title="<?= Module::t('default', 'Remove image'); ?>"></i>
             </div>
         </div>
     </div>

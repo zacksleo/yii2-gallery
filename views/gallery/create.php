@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 use zacksleo\yii2\gallery\Module;
 
-$this->title = Module::t('default', 'CREATE');
+$this->title = Module::t('default', 'Create');
 $this->params['breadcrumbs'] = [
-    ['label' => Module::t('default', 'GALLERIES'), 'url' => ['index']],
+    ['label' => Module::t('default', 'Galleries'), 'url' => ['index']],
     $this->title
 ];
 

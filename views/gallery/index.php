@@ -4,9 +4,9 @@ use yii\helpers\Html;
 use kartik\grid\GridView;
 use zacksleo\yii2\gallery\Module;
 
-$this->title = Module::t('default', 'GALLERY_MANAGER');
+$this->title = Module::t('default', 'Gallery manager');
 $this->params['breadcrumbs'] = [
-    Module::t('default', 'GALLERIES')
+    Module::t('default', 'Galleries')
 ];
 
 ?>
@@ -22,11 +22,11 @@ $this->params['breadcrumbs'] = [
         'toolbar' => [
             ['content'=>
                 Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'], [
-                    'title' => Module::t('default', 'CREATE'), 'class'=>'btn btn-success'
+                    'title' => Module::t('default', 'Create'), 'class'=>'btn btn-success'
                 ]) . ' '.
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', [
                     'index'
-                ], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Module::t('default', 'RESET')])
+                ], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Module::t('default', 'Reset')])
             ],
             '{toggleData}'
         ],

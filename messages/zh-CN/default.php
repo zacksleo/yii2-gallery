@@ -1,25 +1,25 @@
 <?php
 
 return [
-    'GALLERIES' => '图片',
-    'GALLERY_MANAGER' => '图库管理',
-    'CREATE' => '新建',
-    'CREATED' => '已创建',
-    'UPDATE' => '更新',
-    'UPDATED' => '已更新',
-    'DELETE' => '删除',
-    'RESET' => '重置',
-    'VIEW' => '查看',
+    'Galleries' => '图库',
+    'Gallery manager' => '图库管理',
+    'Create' => '新建',
+    'Created' => '已创建',
+    'Update' => '更新',
+    'Updated' => '已更新',
+    'Delete' => '删除',
+    'Reset' => '重置',
+    'View' => '查看',
 
-    'ID' => 'ID',
-    'NAME' => '名称',
-    'STATUS' => '状态',
-    'CAPTION' => '标题',
-    'ORIGINAL' => '原始的',
-    'UPDATE_CAPTION' => '更新标题',
-    'REMOVE_IMAGE' => '删除图片',
+    'ID' => 'id',
+    'Name' => '名称',
+    'Status' => '状态',
+    'Caption' => '标题',
+    'Original' => '原始的',
+    'Update caption' => '更新标题',
+    'Remove image' => '删除图片',
 
-    'ATTENTION_SAVE_MODEL' => '<strong>注意!</strong> 保存模型以使用库',
+    'Attention! Save the model to work with the gallery' => '注意!保存模型以使用库',
 
-    'DELETE_ITEM' => '确定要删除些项吗？'
+    'Are you sure you want to delete this item?' => '确定要删除此项吗？'
 ];

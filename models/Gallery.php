@@ -62,10 +62,10 @@ class Gallery extends \yii\db\ActiveRecord
     {
         return [
             'id' => Module::t('default', 'ID'),
-            'name' => Module::t('default', 'NAME'),
-            'status' => Module::t('default', 'STATUS'),
-            'created_at' => Module::t('default', 'CREATED'),
-            'updated_at' => Module::t('default', 'UPDATED'),
+            'name' => Module::t('default', 'Name'),
+            'status' => Module::t('default', 'Status'),
+            'created_at' => Module::t('default', 'Created'),
+            'updated_at' => Module::t('default', 'Updated'),
         ];
     }
 

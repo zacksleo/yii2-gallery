@@ -124,7 +124,7 @@ if (!$model->isNewRecord) {
                 <?php if ($model->isNewRecord) :?>
                     <div class="alert alert-info alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <?= Module::t('default', 'ATTENTION_SAVE_MODEL'); ?>
+                        <?= Module::t('default', 'Attention! Save the model to work with the gallery'); ?>
                     </div>
                 <?php else :?>
                     <?= FileInput::widget([
@@ -170,7 +170,7 @@ if (!$model->isNewRecord) {
     <hr />
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Module::t('default', 'CREATE') : Module::t('default', 'UPDATE'), [
+        <?= Html::submitButton($model->isNewRecord ? Module::t('default', 'Create') : Module::t('default', 'Update'), [
                 'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
         ); ?>
     </div>
