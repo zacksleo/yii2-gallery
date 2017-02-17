@@ -17,7 +17,6 @@
   "require": {
     "yiisoft/yii2": "*",
     "kartik-v/yii2-widgets": "*",
-    "kartik-v/yii2-grid": "*",
     "sadovojav/yii2-inline-widgets-behavior": "dev-master"
   },
   "autoload": {
