@@ -138,7 +138,7 @@ if (!$model->isNewRecord) {
                                 'uploadAsync' => true,
                                 'uploadUrl' => Yii::$app->urlManager->createUrl(['/gallery/gallery/upload']),
                                 'uploadExtraData' => [
-                                    'galleryId' => $model->id,
+                                    'gallery_id' => $model->id,
                                 ],
                             ],
                             'pluginEvents' => [

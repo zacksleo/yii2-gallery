@@ -18,7 +18,7 @@ use zacksleo\yii2\gallery\Module;
             ]); ?>
 
             <div class="actions">
-                <a href="<?= $model->src; ?>" rel="<?= $model->galleryId; ?>" class="fancy" title="<?= $model->caption; ?>">
+                <a href="<?= $model->src; ?>" rel="<?= $model->gallery_id; ?>" class="fancy" title="<?= $model->caption; ?>">
                     <i class="watch glyphicon glyphicon-eye-open" title="<?= Module::t('default', 'Original'); ?>"></i>
                 </a>
 

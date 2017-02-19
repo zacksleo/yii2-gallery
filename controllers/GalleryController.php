@@ -61,7 +61,7 @@ class GalleryController extends \yii\web\Controller
             mkdir($baseDir);
         }
 
-        $dir = $baseDir . DIRECTORY_SEPARATOR . $_POST['galleryId'];
+        $dir = $baseDir . DIRECTORY_SEPARATOR . $_POST['gallery_id'];
 
         if (!is_dir($dir)) {
             mkdir($dir);
@@ -79,7 +79,7 @@ class GalleryController extends \yii\web\Controller
             $file->saveAs($dir . DIRECTORY_SEPARATOR . $name);
 
             $model = new GalleryFile();
-            $model->galleryId = $_POST['galleryId'];
+            $model->gallery_id = $_POST['gallery_id'];
             $model->file = $name;
 
             if ($model->save()) {

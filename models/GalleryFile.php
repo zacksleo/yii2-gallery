@@ -9,7 +9,7 @@ use yii\helpers\FileHelper;
  * This is the model class for table "{{%gallery_file}}".
  *
  * @property integer $id
- * @property integer $galleryId
+ * @property integer $gallery_id
  * @property string $file
  * @property string $caption
  * @property integer $position
@@ -30,8 +30,8 @@ class GalleryFile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['galleryId', 'file'], 'required'],
-            [['galleryId', 'position'], 'integer'],
+            [['gallery_id', 'file'], 'required'],
+            [['gallery_id', 'position'], 'integer'],
             ['position', 'default', 'value' => 0],
             [['caption', 'file'], 'string', 'max' => 255]
         ];
@@ -45,7 +45,7 @@ class GalleryFile extends \yii\db\ActiveRecord
     {
         $path = DIRECTORY_SEPARATOR . preg_replace('/^@(\w+)\//i', '', Yii::$app->getModule('gallery')->basePath);
 
-        return FileHelper::normalizePath($path . DIRECTORY_SEPARATOR . $this->galleryId . DIRECTORY_SEPARATOR . $this->file, DIRECTORY_SEPARATOR);
+        return FileHelper::normalizePath($path . DIRECTORY_SEPARATOR . $this->gallery_id . DIRECTORY_SEPARATOR . $this->file, DIRECTORY_SEPARATOR);
     }
 
     /**
@@ -55,6 +55,6 @@ class GalleryFile extends \yii\db\ActiveRecord
     public function getPath()
     {
         return FileHelper::normalizePath(Yii::getAlias(Yii::$app->getModule('gallery')->basePath . DIRECTORY_SEPARATOR
-            . $this->galleryId . DIRECTORY_SEPARATOR . $this->file));
+            . $this->gallery_id . DIRECTORY_SEPARATOR . $this->file));
     }
 }

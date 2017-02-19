@@ -165,7 +165,7 @@ class Gallery extends \yii\db\ActiveRecord
      */
     public function getFiles()
     {
-        return $this->hasMany(GalleryFile::className(), ['galleryId' => 'id'])
+        return $this->hasMany(GalleryFile::className(), ['gallery_id' => 'id'])
             ->orderBy([
                 'position' => SORT_ASC
             ]);
