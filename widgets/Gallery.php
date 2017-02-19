@@ -31,7 +31,7 @@ class Gallery extends \yii\base\Widget
     public function run()
     {
         $dependency = new DbDependency();
-        $dependency->sql = 'SELECT MAX(updated) FROM {{%gallery}}';
+        $dependency->sql = 'SELECT MAX(updated_at) FROM {{%gallery}}';
 
         $model = BaseGallery::getDb()->cache(function () {
             return BaseGallery::find()

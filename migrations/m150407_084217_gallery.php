@@ -34,14 +34,14 @@ class m150407_084217_gallery extends Migration
          */
         $this->createTable('{{%gallery_file}}', [
             'id' => Schema::TYPE_PK,
-            'galleryId' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'gallery_id' => Schema::TYPE_INTEGER . ' NOT NULL',
             'file' => Schema::TYPE_STRING . '(255) NOT NULL',
             'caption' => Schema::TYPE_STRING . '(255)',
             'position' => Schema::TYPE_INTEGER . '(1) DEFAULT 0',
         ], $tableOptions);
 
-        $this->createIndex('idx_gallery_galleryId', '{{%gallery_file}}', 'galleryId');
-        $this->addForeignKey('fk_gallery_file_galleryId', '{{%gallery_file}}', 'galleryId', '{{%gallery}}',
+        $this->createIndex('idx_gallery_galleryId', '{{%gallery_file}}', 'gallery_id');
+        $this->addForeignKey('fk_gallery_file_galleryId', '{{%gallery_file}}', 'gallery_id', '{{%gallery}}',
             'id','CASCADE','RESTRICT');
     }
 
