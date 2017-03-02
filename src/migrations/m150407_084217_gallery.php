@@ -41,7 +41,7 @@ class m150407_084217_gallery extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_gallery_galleryId', '{{%gallery_file}}', 'gallery_id');
-
+        return true;
     }
 
     public function down()
@@ -51,6 +51,6 @@ class m150407_084217_gallery extends Migration
         $this->dropTable('{{%gallery}}');
         $this->dropTable('{{%gallery_file}}');
 
-        return false;
+        return true;
     }
 }

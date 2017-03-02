@@ -29,7 +29,7 @@ class UploadImageBehavior extends UploadBehavior
                         $this->delete($this->attribute, true);
                     }
                 }
-                $model->setAttribute($this->attribute, $this->galleryId . '/' . $this->_file->name);
+                $model->setAttribute($this->attribute, $this->galleryId . '/' . $this->getUploadedFile->name);
             } else {
                 unset($model->{$this->attribute});
             }
