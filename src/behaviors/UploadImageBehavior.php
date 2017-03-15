@@ -1,6 +1,5 @@
 <?php
 
-
 namespace zacksleo\yii2\gallery\behaviors;
 
 use mongosoft\file\UploadImageBehavior as UploadBehavior;
@@ -23,13 +22,13 @@ class UploadImageBehavior extends UploadBehavior
         /** @var \yii\db\BaseActiveRecord $model */
         $model = $this->owner;
         if (in_array($model->scenario, $this->scenarios)) {
-            if ($this->_file instanceof UploadedFile) {
+            if ($this->getUploadedFile() instanceof UploadedFile) {
                 if (!$model->getIsNewRecord() && $model->isAttributeChanged($this->attribute)) {
                     if ($this->unlinkOnSave === true) {
                         $this->delete($this->attribute, true);
                     }
                 }
-                $model->setAttribute($this->attribute, $this->galleryId . '/' . $this->getUploadedFile->name);
+                $model->setAttribute($this->attribute, $this->galleryId . '/' . $this->getUploadedFile()->name);
             } else {
                 unset($model->{$this->attribute});
             }

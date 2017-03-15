@@ -2,6 +2,8 @@
   "name": "zacksleo/yii2-gallery",
   "description": "Yii2 gallery module",
   "type": "yii2-extension",
+  "license": "proprietary",
+  "minimum-stability": "dev",
   "keywords": [
     "yii2",
     "gallery",
@@ -17,7 +19,7 @@
   "require": {
     "yiisoft/yii2": "*",
     "kartik-v/yii2-widgets": "*",
-    "sadovojav/yii2-inline-widgets-behavior": "^0.1.7"
+    "mongosoft/yii2-upload-behavior": "*"
   },
   "autoload": {
     "psr-4": {
