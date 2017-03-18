@@ -20,4 +20,4 @@ class Query extends ActiveQuery
 
         return $this;
     }
-} 
+}

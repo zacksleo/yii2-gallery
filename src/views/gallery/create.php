@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 use zacksleo\yii2\gallery\Module;
 

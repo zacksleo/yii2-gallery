@@ -121,45 +121,46 @@ if (!$model->isNewRecord) {
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <?php if ($model->isNewRecord) :?>
+                <?php if ($model->isNewRecord) : ?>
                     <div class="alert alert-info alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
                         <?= Module::t('default', 'Attention! Save the model to work with the gallery'); ?>
                     </div>
-                <?php else :?>
+                <?php else : ?>
                     <?= FileInput::widget([
-                            'name' => 'files[]',
-                            'language' => Yii::$app->language,
-                            'options'=>[
-                                'multiple' => true,
-                                'accept' => 'image/*'
+                        'name' => 'files[]',
+                        'language' => Yii::$app->language,
+                        'options' => [
+                            'multiple' => true,
+                            'accept' => 'image/*'
+                        ],
+                        'pluginOptions' => [
+                            'uploadAsync' => true,
+                            'uploadUrl' => Yii::$app->urlManager->createUrl(['/gallery/gallery/upload']),
+                            'uploadExtraData' => [
+                                'gallery_id' => $model->id,
                             ],
-                            'pluginOptions' => [
-                                'uploadAsync' => true,
-                                'uploadUrl' => Yii::$app->urlManager->createUrl(['/gallery/gallery/upload']),
-                                'uploadExtraData' => [
-                                    'gallery_id' => $model->id,
-                                ],
-                            ],
-                            'pluginEvents' => [
-                                'fileuploaded' => 'function (event, data, previewId, index) {
+                        ],
+                        'pluginEvents' => [
+                            'fileuploaded' => 'function (event, data, previewId, index) {
                                     $("#images").append(data.response.html);
 
                                     calculatePositions();
                                 }'
-                            ]
-                        ]);
+                        ]
+                    ]);
                     ?>
 
                     <div id="images" class="row">
                         <?php
-                            if (count($model->files)) {
-                                foreach ($model->files as $key => $value) {
-                                    echo $this->render('_image', [
-                                        'model' => $value
-                                    ]);
-                                }
+                        if (count($model->files)) {
+                            foreach ($model->files as $key => $value) {
+                                echo $this->render('_image', [
+                                    'model' => $value
+                                ]);
                             }
+                        }
                         ?>
                     </div>
                 <?php endif; ?>
@@ -167,7 +168,7 @@ if (!$model->isNewRecord) {
         </div>
     </div>
 
-    <hr />
+    <hr/>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Module::t('default', 'Create') : Module::t('default', 'Update'), [

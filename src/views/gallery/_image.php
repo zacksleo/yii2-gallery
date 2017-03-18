@@ -5,7 +5,7 @@ use zacksleo\yii2\gallery\Module;
 
 ?>
 
-<div class="image col-lg-3 col-md-4 col-sm-6 col-xs-12" data-id="<?= $model->id?>">
+<div class="image col-lg-3 col-md-4 col-sm-6 col-xs-12" data-id="<?= $model->id ?>">
     <div class="wrapper">
         <div class="handle">
             <img src="<?= $model->src; ?>" class="portrait img-responsive"/>
@@ -18,7 +18,8 @@ use zacksleo\yii2\gallery\Module;
             ]); ?>
 
             <div class="actions">
-                <a href="<?= $model->src; ?>" rel="<?= $model->gallery_id; ?>" class="fancy" title="<?= $model->caption; ?>">
+                <a href="<?= $model->src; ?>" rel="<?= $model->gallery_id; ?>" class="fancy"
+                   title="<?= $model->caption; ?>">
                     <i class="watch glyphicon glyphicon-eye-open" title="<?= Module::t('default', 'Original'); ?>"></i>
                 </a>
 
