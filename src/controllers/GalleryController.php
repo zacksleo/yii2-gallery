@@ -161,11 +161,8 @@ class GalleryController extends Controller
     private function getUniqueName($file)
     {
         $explodeName = explode('.', $file->name);
-
         $ext = end($explodeName);
-
         return uniqid() . '.' . $ext;
-
     }
 
     /**
@@ -241,7 +238,6 @@ class GalleryController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
 
