@@ -13,12 +13,13 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Response;
 use yii\web\UploadedFile;
+use yii\web\Controller;
 
 /**
  * Class GalleryController
  * @package zacksleo\yii2\gallery\controllers
  */
-class GalleryController extends \yii\web\Controller
+class GalleryController extends Controller
 {
     public function behaviors()
     {
@@ -100,8 +101,8 @@ class GalleryController extends \yii\web\Controller
 
     /**
      * Deletes an existing gallery fle model.
-     * @param integer $id
-     * @return mixed
+     * @return array|bool
+     * @throws BadRequestHttpException
      */
     public function actionRemove()
     {

@@ -6,12 +6,13 @@ use Yii;
 use yii\caching\DbDependency;
 use yii\helpers\Html;
 use zacksleo\yii2\gallery\models\Gallery as BaseGallery;
+use yii\base\Widget;
 
 /**
  * Class Gallery
  * @package sadovojav\gallery\widgets
  */
-class Gallery extends \yii\base\Widget
+class Gallery extends Widget
 {
     /**
      * @var

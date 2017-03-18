@@ -34,7 +34,6 @@ class AssetBundle extends \yii\web\AssetBundle
     public function init()
     {
         $this->sourcePath = __DIR__ . '/assets';
-
         parent::init();
     }
 }

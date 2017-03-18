@@ -4,6 +4,7 @@ namespace zacksleo\yii2\gallery\models;
 
 use Yii;
 use yii\helpers\FileHelper;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%gallery_file}}".
@@ -14,7 +15,7 @@ use yii\helpers\FileHelper;
  * @property string $caption
  * @property integer $position
  */
-class GalleryFile extends \yii\db\ActiveRecord
+class GalleryFile extends ActiveRecord
 {
     /**
      * @inheritdoc

@@ -43,7 +43,7 @@ class GallerySearch extends Gallery
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> [
+            'sort' => [
                 'defaultOrder' => [
                     'created_at' => SORT_DESC
                 ],

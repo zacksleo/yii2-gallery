@@ -8,6 +8,7 @@ use RecursiveIteratorIterator;
 use yii\db\Expression;
 use zacksleo\yii2\gallery\Module;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%gallery}}".
@@ -20,7 +21,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property GalleryFile[] $files
  */
-class Gallery extends \yii\db\ActiveRecord
+class Gallery extends ActiveRecord
 {
     /**
      * @inheritdoc
