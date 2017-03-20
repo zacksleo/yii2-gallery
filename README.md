@@ -1,5 +1,9 @@
 # Yii2 gallery
 
+[![Latest Stable Version](https://poser.pugx.org/zacksleo/yii2-gallery/version)](https://packagist.org/packages/zacksleo/yii2-gallery)
+[![Total Downloads](https://poser.pugx.org/zacksleo/yii2-gallery/downloads)](https://packagist.org/packages/zacksleo/yii2-gallery)
+[![License](https://poser.pugx.org/zacksleo/yii2-gallery/license)](https://packagist.org/packages/zacksleo/yii2-gallery)
+
 original [yii2-gallery-module](https://github.com/sadovojav/yii2-gallery-module)
 
 #### Features:
