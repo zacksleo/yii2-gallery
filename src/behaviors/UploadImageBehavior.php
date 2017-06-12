@@ -12,8 +12,8 @@ class UploadImageBehavior extends UploadBehavior
 
     public function init()
     {
-        $this->path = '@frontend/web/galleries/';
-        $this->url = '@web/galleries/';
+        $this->path = '@frontend/web/uploads/galleries/';
+        $this->url = '@web/uploads/galleries/';
         parent::init();
     }
 
