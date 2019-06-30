@@ -19,7 +19,8 @@
   "require": {
     "yiisoft/yii2": "*",
     "kartik-v/yii2-widgets": "*",
-    "mongosoft/yii2-upload-behavior": "*"
+    "mongosoft/yii2-upload-behavior": "*",
+    "yiisoft/yii2-imagine": "*"
   },
   "autoload": {
     "psr-4": {

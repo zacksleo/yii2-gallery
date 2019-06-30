@@ -2,7 +2,7 @@
 
 namespace zacksleo\yii2\gallery\behaviors;
 
-use mongosoft\file\UploadImageBehavior as UploadBehavior;
+use mohorev\file\UploadImageBehavior as UploadBehavior;
 use yii\web\UploadedFile;
 use zacksleo\yii2\gallery\models\GalleryFile;
 
